@@ -17,7 +17,7 @@ module.exports = monthlySale = async() => {
         let saleCountList = saleCountListHtml.map(html => html.innerText);
         let result = [];
         for (let i = 0; i <= nameList.length-1; i++) {
-            result += `${nameList[i]} \n amount: ${saleCountList[i]}`
+            result += `${nameList[i]} \n amount: ${saleCountList[i]} \n\n`
         }
         return result;
     });

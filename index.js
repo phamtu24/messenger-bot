@@ -22,8 +22,10 @@ login({appState: JSON.parse(fs.readFileSync('appstate.json', 'utf8'))}, (err, ap
                     api.sendMessage("Goodbye…", event.threadID);
                     return stopListening();
                 }
-                let chart = await monthlySale()
-                api.sendMessage(chart, event.threadID);
+                if(event.body === '!gaon') {
+                    let chart = await monthlySale()
+                    api.sendMessage(chart, event.threadID);
+                }
                 break;
             case "event":
                 console.log(event);
